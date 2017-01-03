@@ -65,7 +65,7 @@ exports.commands = {
 		var article = toId(params[0]);
 		switch (article) {
 			case 'customtc':
-				prize = 8000;
+				prize = 6000;
 				if (Shop.getUserMoney(user.name) < prize) return this.sendReply("No tienes suficiente dinero.");
 				var tcUser = Shop.getTrainerCard(user.name);
 				if (!tcUser) {
@@ -78,7 +78,7 @@ exports.commands = {
 				return this.sendReply("Has comprado una Tarjeta de entreador personalizada. Consulta /shophelp para más información.");
 				break;
 			case 'tc':
-				prize = 3000;
+				prize = 2500;
 				if (Shop.getUserMoney(user.name) < prize) return this.sendReply("No tienes suficiente dinero.");
 				var tcUser = Shop.getTrainerCard(user.name);
 				if (tcUser) return this.sendReply("Ya poseías este artículo.");
@@ -87,7 +87,7 @@ exports.commands = {
 				return this.sendReply("Has comprado una Tarjeta de Entrenador. Revisa /shophelp para saber como editarla.");
 				break;
 			case 'sprite':
-				prize = 100;
+				prize = 60;
 				if (Shop.getUserMoney(user.name) < prize) return this.sendReply("No tienes suficiente dinero.");
 				var tcUser = Shop.getTrainerCard(user.name);
 				if (!tcUser) return this.sendReply("Necesitas comprar primero una Tarjeta de entrenador.");
@@ -113,7 +113,7 @@ exports.commands = {
 				return this.sendReply("No se pudo realizar la compra debido a un error al crear la sala '" + params[1] + "'.");
 				break;
 			case 'symbol':
-				prize = 4000;
+				prize = 4500;
 				if (Shop.getUserMoney(user.name) < prize) return this.sendReply("No tienes suficiente dinero.");
 				if (Shop.symbolPermision(user.name)) return this.sendReply("Ya posees este artículo.");
 				Shop.setSymbolPermision(user.name, true);
@@ -131,7 +131,7 @@ exports.commands = {
 				return this.sendReply("Has solicitado un cambio de tu avatar personalizado. Espera a que un admin revise tu compra.");
 				break;
 			case 'customavatar':
-				prize = 6000;
+				prize = 5000;
 				if (Shop.getUserMoney(user.name) < prize) return this.sendReply("No tienes suficiente dinero.");
 				if (Config.customavatars[user.userid]) return this.sendReply("Ya habías comprado este artículo. Para cambiar tu avatar compra la opcion Avatar");
 				if (params.length !== 2) return this.sendReply("Usa el comando así: /buy avatar,[imagen]");
